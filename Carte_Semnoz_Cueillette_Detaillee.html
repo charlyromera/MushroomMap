@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1f9f082e72350699e6fa631684e769a0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+     <div style="position: fixed;
+     bottom: 20px; left: 20px; width: 300px; height: 150px;
+     background-color: white; border:2px solid grey; z-index:9999; font-size:14px;">
+     &nbsp; <b>Légende des icônes:</b> <br>
+     &nbsp; 🍄 Zones de cueillette de champignons <br>
+     &nbsp; 🌧️ Préférer après la pluie <br>
+     &nbsp; 🌳 Sous-bois et racines <br>
+     &nbsp; 🌲 Conifères en altitude <br>
+     &nbsp; 💧 Près des ruisseaux <br>
+     &nbsp; 🍂 Zones avec feuilles mortes <br>
+     </div>
+     
+    
+            <div class="folium-map" id="map_1f9f082e72350699e6fa631684e769a0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1f9f082e72350699e6fa631684e769a0 = L.map(
+                "map_1f9f082e72350699e6fa631684e769a0",
+                {
+                    center: [45.8001, 6.0956],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a154e027ee9e4af30c303d224874e30b = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_1f9f082e72350699e6fa631684e769a0);
+        
+    
+            var marker_9849718d56274c2cc2065ab756c19544 = L.marker(
+                [45.8016, 6.0825],
+                {}
+            ).addTo(map_1f9f082e72350699e6fa631684e769a0);
+        
+    
+            var div_icon_7cead31cc5d0a7c91706c152bc24d7da = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_9849718d56274c2cc2065ab756c19544.setIcon(div_icon_7cead31cc5d0a7c91706c152bc24d7da);
+        
+    
+        var popup_63bc77bd0df4ba8125e22e3a0707ea62 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8bece6ea3b1a9966e583734c1b9d6b73 = $(`<div id="html_8bece6ea3b1a9966e583734c1b9d6b73" style="width: 100.0%; height: 100.0%;"><b>🍄 Parking du Crêt de Châtillon</b><br><ul><li><b>Types de champignons:</b> Cèpes, Girolles</li><li><b>Endroits idéaux:</b> Zones forestières ombragées, pentes douces</li><li><b>Astuce:</b> Cherchez sous les feuilles mortes et dans les sous-bois de hêtres 🍂</li></ul></div>`)[0];
+            popup_63bc77bd0df4ba8125e22e3a0707ea62.setContent(html_8bece6ea3b1a9966e583734c1b9d6b73);
+        
+
+        marker_9849718d56274c2cc2065ab756c19544.bindPopup(popup_63bc77bd0df4ba8125e22e3a0707ea62)
+        ;
+
+        
+    
+    
+            marker_9849718d56274c2cc2065ab756c19544.bindTooltip(
+                `<div>
+                     Parking du Crêt de Châtillon - Cliquez pour les détails 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4e423cc49020442886ec7dd0d66e721c = L.marker(
+                [45.8089, 6.1038],
+                {}
+            ).addTo(map_1f9f082e72350699e6fa631684e769a0);
+        
+    
+            var div_icon_faf3134d7dc285b381a7a11d9e22bbf0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_4e423cc49020442886ec7dd0d66e721c.setIcon(div_icon_faf3134d7dc285b381a7a11d9e22bbf0);
+        
+    
+        var popup_6356e889936f25705e36a7795032a7a6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e2fa9d3b39660ad94a5240076dec7f4d = $(`<div id="html_e2fa9d3b39660ad94a5240076dec7f4d" style="width: 100.0%; height: 100.0%;"><b>🍄 Route du Semnoz (D41)</b><br><ul><li><b>Types de champignons:</b> Cèpes, Girolles</li><li><b>Endroits idéaux:</b> Pentes exposées nord-ouest, forêts mixtes</li><li><b>Astuce:</b> Préférez les pentes humides après la pluie 🌧️</li></ul></div>`)[0];
+            popup_6356e889936f25705e36a7795032a7a6.setContent(html_e2fa9d3b39660ad94a5240076dec7f4d);
+        
+
+        marker_4e423cc49020442886ec7dd0d66e721c.bindPopup(popup_6356e889936f25705e36a7795032a7a6)
+        ;
+
+        
+    
+    
+            marker_4e423cc49020442886ec7dd0d66e721c.bindTooltip(
+                `<div>
+                     Route du Semnoz (D41) - Cliquez pour les détails 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f55aa5a066ffc998c593a748123a95c5 = L.marker(
+                [45.7777, 6.0548],
+                {}
+            ).addTo(map_1f9f082e72350699e6fa631684e769a0);
+        
+    
+            var div_icon_f368fd56fa18b196c20bbfec35713eeb = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_f55aa5a066ffc998c593a748123a95c5.setIcon(div_icon_f368fd56fa18b196c20bbfec35713eeb);
+        
+    
+        var popup_52819753a45ee419224a9d1915c4df70 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a4d4ea61a2d2ad5dd657c418808758ca = $(`<div id="html_a4d4ea61a2d2ad5dd657c418808758ca" style="width: 100.0%; height: 100.0%;"><b>🍄 Forêt de Gruffy</b><br><ul><li><b>Types de champignons:</b> Pieds-de-mouton, Trompettes-de-la-mort</li><li><b>Endroits idéaux:</b> Zones riches en humus, proches des ruisseaux 💧</li><li><b>Astuce:</b> Explorez près des racines et troncs d'arbres morts 🌳</li></ul></div>`)[0];
+            popup_52819753a45ee419224a9d1915c4df70.setContent(html_a4d4ea61a2d2ad5dd657c418808758ca);
+        
+
+        marker_f55aa5a066ffc998c593a748123a95c5.bindPopup(popup_52819753a45ee419224a9d1915c4df70)
+        ;
+
+        
+    
+    
+            marker_f55aa5a066ffc998c593a748123a95c5.bindTooltip(
+                `<div>
+                     Forêt de Gruffy - Cliquez pour les détails 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_91dcaf341100ca34eb5ed248efef50c1 = L.marker(
+                [45.8342, 6.1173],
+                {}
+            ).addTo(map_1f9f082e72350699e6fa631684e769a0);
+        
+    
+            var div_icon_5b308bbca3fb1021f58e62a0e75e8fa3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_91dcaf341100ca34eb5ed248efef50c1.setIcon(div_icon_5b308bbca3fb1021f58e62a0e75e8fa3);
+        
+    
+        var popup_b88f9730e4971ab15550f7cc7172b3ca = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b38e7984854e2beb01532b1c7ddea9a2 = $(`<div id="html_b38e7984854e2beb01532b1c7ddea9a2" style="width: 100.0%; height: 100.0%;"><b>🍄 Secteur des Puisots</b><br><ul><li><b>Types de champignons:</b> Pied-de-mouton, Chanterelles</li><li><b>Endroits idéaux:</b> Sous les épicéas, sols acides et bien drainés 🌲</li><li><b>Astuce:</b> Repérez les sols acides en altitude 🌄</li></ul></div>`)[0];
+            popup_b88f9730e4971ab15550f7cc7172b3ca.setContent(html_b38e7984854e2beb01532b1c7ddea9a2);
+        
+
+        marker_91dcaf341100ca34eb5ed248efef50c1.bindPopup(popup_b88f9730e4971ab15550f7cc7172b3ca)
+        ;
+
+        
+    
+    
+            marker_91dcaf341100ca34eb5ed248efef50c1.bindTooltip(
+                `<div>
+                     Secteur des Puisots - Cliquez pour les détails 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e37136274f49f648b1ad7e786b1becf7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+     <div style="position: fixed;
+     bottom: 20px; left: 20px; width: 300px; height: 150px;
+     background-color: white; border:2px solid grey; z-index:9999; font-size:14px;">
+     &nbsp; <b>Légende des icônes:</b> <br>
+     &nbsp; 🍄 Zones de cueillette de champignons <br>
+     &nbsp; 🌧️ Préférer après la pluie <br>
+     &nbsp; 🌳 Sous-bois et racines <br>
+     &nbsp; 🌲 Conifères en altitude <br>
+     &nbsp; 💧 Près des ruisseaux <br>
+     &nbsp; 🍂 Zones avec feuilles mortes <br>
+     </div>
+     
+    
+            <div class="folium-map" id="map_e37136274f49f648b1ad7e786b1becf7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e37136274f49f648b1ad7e786b1becf7 = L.map(
+                "map_e37136274f49f648b1ad7e786b1becf7",
+                {
+                    center: [45.8995, 6.1286],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_08eb0cbc7b3b7cee6d161d77f210c28d = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var marker_729c90776273dd66d4acc5b6c422fdc9 = L.marker(
+                [45.8016, 6.0825],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_2fe6ae829bdaf1f4de721843919e6684 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_729c90776273dd66d4acc5b6c422fdc9.setIcon(div_icon_2fe6ae829bdaf1f4de721843919e6684);
+        
+    
+        var popup_f41a714dd7b17d82d6f344f5ccf70be0 = L.popup({"maxWidth": 250});
+
+        
+            var html_e99a93b9b4223c30262ad4ee3a3e171d = $(`<div id="html_e99a93b9b4223c30262ad4ee3a3e171d" style="width: 100.0%; height: 100.0%;"><b>🍄 Parking du Crêt de Châtillon</b><br><ul><li><b>Types:</b> Cèpes, Girolles</li><li><b>Endroits idéaux:</b> Zones ombragées, pentes douces 🍂</li><li><b>Astuce:</b> Cherchez sous les feuilles mortes et dans les sous-bois de hêtres</li></ul></div>`)[0];
+            popup_f41a714dd7b17d82d6f344f5ccf70be0.setContent(html_e99a93b9b4223c30262ad4ee3a3e171d);
+        
+
+        marker_729c90776273dd66d4acc5b6c422fdc9.bindPopup(popup_f41a714dd7b17d82d6f344f5ccf70be0)
+        ;
+
+        
+    
+    
+            marker_729c90776273dd66d4acc5b6c422fdc9.bindTooltip(
+                `<div>
+                     Parking du Crêt de Châtillon 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bcdc0e74373cc5c9440970073b891767 = L.marker(
+                [45.8089, 6.1038],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_7e608afd2070315fd40961b8a328683a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_bcdc0e74373cc5c9440970073b891767.setIcon(div_icon_7e608afd2070315fd40961b8a328683a);
+        
+    
+        var popup_3dcbe5e03e9d1ecf23320b4c7beec239 = L.popup({"maxWidth": 250});
+
+        
+            var html_bdca0ea84b2d082001a35943a998e8b0 = $(`<div id="html_bdca0ea84b2d082001a35943a998e8b0" style="width: 100.0%; height: 100.0%;"><b>🍄 Route du Semnoz (D41)</b><br><ul><li><b>Types:</b> Cèpes, Girolles</li><li><b>Endroits idéaux:</b> Pentes humides 🌧️</li><li><b>Astuce:</b> Préférez les pentes humides après la pluie</li></ul></div>`)[0];
+            popup_3dcbe5e03e9d1ecf23320b4c7beec239.setContent(html_bdca0ea84b2d082001a35943a998e8b0);
+        
+
+        marker_bcdc0e74373cc5c9440970073b891767.bindPopup(popup_3dcbe5e03e9d1ecf23320b4c7beec239)
+        ;
+
+        
+    
+    
+            marker_bcdc0e74373cc5c9440970073b891767.bindTooltip(
+                `<div>
+                     Route du Semnoz (D41) 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5eb8157e7ef64fc4af1c0bcffa399ff5 = L.marker(
+                [45.7777, 6.0548],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_cbd284025475e31c503d455dd4febc36 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_5eb8157e7ef64fc4af1c0bcffa399ff5.setIcon(div_icon_cbd284025475e31c503d455dd4febc36);
+        
+    
+        var popup_e9c54438b4f2c9f0509a6fb02f4c93ad = L.popup({"maxWidth": 250});
+
+        
+            var html_537dd00b8897a0d99040cdc1c8a553d8 = $(`<div id="html_537dd00b8897a0d99040cdc1c8a553d8" style="width: 100.0%; height: 100.0%;"><b>🍄 Forêt de Gruffy</b><br><ul><li><b>Types:</b> Pieds-de-mouton, Trompettes-de-la-mort</li><li><b>Endroits idéaux:</b> Proche des ruisseaux 💧</li><li><b>Astuce:</b> Explorez près des racines et troncs d'arbres morts</li></ul></div>`)[0];
+            popup_e9c54438b4f2c9f0509a6fb02f4c93ad.setContent(html_537dd00b8897a0d99040cdc1c8a553d8);
+        
+
+        marker_5eb8157e7ef64fc4af1c0bcffa399ff5.bindPopup(popup_e9c54438b4f2c9f0509a6fb02f4c93ad)
+        ;
+
+        
+    
+    
+            marker_5eb8157e7ef64fc4af1c0bcffa399ff5.bindTooltip(
+                `<div>
+                     Forêt de Gruffy 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_02963d2e6e721db579ef64ab7638fc6c = L.marker(
+                [45.8342, 6.1173],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_a71fbd447d978a2cf29204675207b541 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_02963d2e6e721db579ef64ab7638fc6c.setIcon(div_icon_a71fbd447d978a2cf29204675207b541);
+        
+    
+        var popup_e03961b0ceee0870eb1805463a04c33f = L.popup({"maxWidth": 250});
+
+        
+            var html_757776bc560add11df76aa7476a03c56 = $(`<div id="html_757776bc560add11df76aa7476a03c56" style="width: 100.0%; height: 100.0%;"><b>🍄 Secteur des Puisots</b><br><ul><li><b>Types:</b> Pied-de-mouton, Chanterelles</li><li><b>Endroits idéaux:</b> Conifères en altitude 🌲</li><li><b>Astuce:</b> Repérez les sols acides en altitude</li></ul></div>`)[0];
+            popup_e03961b0ceee0870eb1805463a04c33f.setContent(html_757776bc560add11df76aa7476a03c56);
+        
+
+        marker_02963d2e6e721db579ef64ab7638fc6c.bindPopup(popup_e03961b0ceee0870eb1805463a04c33f)
+        ;
+
+        
+    
+    
+            marker_02963d2e6e721db579ef64ab7638fc6c.bindTooltip(
+                `<div>
+                     Secteur des Puisots 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_64e25185feec1847ced6b53f10cb58f4 = L.marker(
+                [45.945, 6.181],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_39d289dcd94e321b923db2dfaeb28aba = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_64e25185feec1847ced6b53f10cb58f4.setIcon(div_icon_39d289dcd94e321b923db2dfaeb28aba);
+        
+    
+        var popup_95ff233d5fa6a570fed4b4ba0980cb23 = L.popup({"maxWidth": 250});
+
+        
+            var html_75d77180a4e2e3ab4d987bf7f5a623c5 = $(`<div id="html_75d77180a4e2e3ab4d987bf7f5a623c5" style="width: 100.0%; height: 100.0%;"><b>🍄 Passage de la Tour</b><br><ul><li><b>Types:</b> Cèpes</li><li><b>Terrain:</b> Sous-bois anciens, sol riche 🍂</li><li><b>Astuce:</b> Cherchez sous les feuilles mortes et le long des sentiers anciens</li></ul></div>`)[0];
+            popup_95ff233d5fa6a570fed4b4ba0980cb23.setContent(html_75d77180a4e2e3ab4d987bf7f5a623c5);
+        
+
+        marker_64e25185feec1847ced6b53f10cb58f4.bindPopup(popup_95ff233d5fa6a570fed4b4ba0980cb23)
+        ;
+
+        
+    
+    
+            marker_64e25185feec1847ced6b53f10cb58f4.bindTooltip(
+                `<div>
+                     Passage de la Tour 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f53c9c485966cc576d2166d834cb45f6 = L.marker(
+                [45.941, 6.173],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_029b8d95d4bb531098cf95b79f95ebff = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_f53c9c485966cc576d2166d834cb45f6.setIcon(div_icon_029b8d95d4bb531098cf95b79f95ebff);
+        
+    
+        var popup_01d220bb3338e225f808066a283bbc5b = L.popup({"maxWidth": 250});
+
+        
+            var html_b0e55c37a12e1d54fe4c309a1ede0b42 = $(`<div id="html_b0e55c37a12e1d54fe4c309a1ede0b42" style="width: 100.0%; height: 100.0%;"><b>🍄 Étang du Marquis</b><br><ul><li><b>Types:</b> Trompettes-de-la-mort, Girolles</li><li><b>Terrain:</b> Zones humides 💧</li><li><b>Astuce:</b> Recherchez les zones proches de l'eau après les pluies</li></ul></div>`)[0];
+            popup_01d220bb3338e225f808066a283bbc5b.setContent(html_b0e55c37a12e1d54fe4c309a1ede0b42);
+        
+
+        marker_f53c9c485966cc576d2166d834cb45f6.bindPopup(popup_01d220bb3338e225f808066a283bbc5b)
+        ;
+
+        
+    
+    
+            marker_f53c9c485966cc576d2166d834cb45f6.bindTooltip(
+                `<div>
+                     Étang du Marquis 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7d6724ffe1222d11567d9e7215292696 = L.marker(
+                [45.95, 6.192],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_6f38bbf56395f1176474771cc0df74b6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_7d6724ffe1222d11567d9e7215292696.setIcon(div_icon_6f38bbf56395f1176474771cc0df74b6);
+        
+    
+        var popup_ba1d751fefcf139293285981641ecb5b = L.popup({"maxWidth": 250});
+
+        
+            var html_28648f0db5294f0540170087516d40ef = $(`<div id="html_28648f0db5294f0540170087516d40ef" style="width: 100.0%; height: 100.0%;"><b>🍄 Villy-le-Bouveret</b><br><ul><li><b>Types:</b> Pieds-de-mouton</li><li><b>Terrain:</b> Près des cours d'eau 💧</li><li><b>Astuce:</b> Cherchez à proximité des cours d'eau et des racines</li></ul></div>`)[0];
+            popup_ba1d751fefcf139293285981641ecb5b.setContent(html_28648f0db5294f0540170087516d40ef);
+        
+
+        marker_7d6724ffe1222d11567d9e7215292696.bindPopup(popup_ba1d751fefcf139293285981641ecb5b)
+        ;
+
+        
+    
+    
+            marker_7d6724ffe1222d11567d9e7215292696.bindTooltip(
+                `<div>
+                     Villy-le-Bouveret 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1a5974c46168b5e216032ca14cfe4e85 = L.marker(
+                [46.035, 6.114],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_1426e07f7f06521b4e7422c6ec873114 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_1a5974c46168b5e216032ca14cfe4e85.setIcon(div_icon_1426e07f7f06521b4e7422c6ec873114);
+        
+    
+        var popup_4573c64a3e8300138280147d4f87507c = L.popup({"maxWidth": 250});
+
+        
+            var html_249e8ec67e91cff40e04a2a959e1a6b0 = $(`<div id="html_249e8ec67e91cff40e04a2a959e1a6b0" style="width: 100.0%; height: 100.0%;"><b>🍄 Boucle du Lac des Dronières</b><br><ul><li><b>Types:</b> Pieds-de-mouton</li><li><b>Terrain:</b> Forêts ombragées 🍂</li><li><b>Astuce:</b> Explorez les sous-bois ombragés pour une meilleure récolte</li></ul></div>`)[0];
+            popup_4573c64a3e8300138280147d4f87507c.setContent(html_249e8ec67e91cff40e04a2a959e1a6b0);
+        
+
+        marker_1a5974c46168b5e216032ca14cfe4e85.bindPopup(popup_4573c64a3e8300138280147d4f87507c)
+        ;
+
+        
+    
+    
+            marker_1a5974c46168b5e216032ca14cfe4e85.bindTooltip(
+                `<div>
+                     Boucle du Lac des Dronières 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e9c58adc4cc2b6dfb4c7ff6a9105498 = L.marker(
+                [46.038, 6.126],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_7fcd109efd781b40cd87b21bca4ecc5b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_1e9c58adc4cc2b6dfb4c7ff6a9105498.setIcon(div_icon_7fcd109efd781b40cd87b21bca4ecc5b);
+        
+    
+        var popup_cb402156492ec779c1d212a1ed201be5 = L.popup({"maxWidth": 250});
+
+        
+            var html_b2348b464ba33ba4a96a0af3720e8427 = $(`<div id="html_b2348b464ba33ba4a96a0af3720e8427" style="width: 100.0%; height: 100.0%;"><b>🍄 Alpage de l’Iselet</b><br><ul><li><b>Types:</b> Girolles, Chanterelles</li><li><b>Terrain:</b> Humides après la pluie 🌧️</li><li><b>Astuce:</b> Préférez les zones humides après la pluie</li></ul></div>`)[0];
+            popup_cb402156492ec779c1d212a1ed201be5.setContent(html_b2348b464ba33ba4a96a0af3720e8427);
+        
+
+        marker_1e9c58adc4cc2b6dfb4c7ff6a9105498.bindPopup(popup_cb402156492ec779c1d212a1ed201be5)
+        ;
+
+        
+    
+    
+            marker_1e9c58adc4cc2b6dfb4c7ff6a9105498.bindTooltip(
+                `<div>
+                     Alpage de l’Iselet 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cf7cbf7261a610669880ab5959ff6352 = L.marker(
+                [46.119, 6.154],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_dfee96bf3311f81d1c830f11f9f83c62 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_cf7cbf7261a610669880ab5959ff6352.setIcon(div_icon_dfee96bf3311f81d1c830f11f9f83c62);
+        
+    
+        var popup_f7eaac357979eb6ea25e3538064d35ca = L.popup({"maxWidth": 250});
+
+        
+            var html_9198a9a1f053bd3c48e39fefadad9d12 = $(`<div id="html_9198a9a1f053bd3c48e39fefadad9d12" style="width: 100.0%; height: 100.0%;"><b>🍄 Sentier de la Croix des Bornes</b><br><ul><li><b>Types:</b> Morilles, Cèpes</li><li><b>Terrain:</b> Sous-bois denses 🌳</li><li><b>Astuce:</b> Recherchez les racines d’arbres dans les sous-bois</li></ul></div>`)[0];
+            popup_f7eaac357979eb6ea25e3538064d35ca.setContent(html_9198a9a1f053bd3c48e39fefadad9d12);
+        
+
+        marker_cf7cbf7261a610669880ab5959ff6352.bindPopup(popup_f7eaac357979eb6ea25e3538064d35ca)
+        ;
+
+        
+    
+    
+            marker_cf7cbf7261a610669880ab5959ff6352.bindTooltip(
+                `<div>
+                     Sentier de la Croix des Bornes 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d52b87f15a297cb840b8cea83f343693 = L.marker(
+                [46.127, 6.175],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_9ce7210b15b10b2e2c743907237214d7 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_d52b87f15a297cb840b8cea83f343693.setIcon(div_icon_9ce7210b15b10b2e2c743907237214d7);
+        
+    
+        var popup_e32bde1bc6599789b6af0ced5ee42367 = L.popup({"maxWidth": 250});
+
+        
+            var html_05c806bce3aefea5940c2f781ab16b81 = $(`<div id="html_05c806bce3aefea5940c2f781ab16b81" style="width: 100.0%; height: 100.0%;"><b>🍄 Route touristique de Bornes</b><br><ul><li><b>Types:</b> Bolets</li><li><b>Terrain:</b> Chênes et sapins 🌲</li><li><b>Astuce:</b> Repérez les champignons sous les chênes et sapins</li></ul></div>`)[0];
+            popup_e32bde1bc6599789b6af0ced5ee42367.setContent(html_05c806bce3aefea5940c2f781ab16b81);
+        
+
+        marker_d52b87f15a297cb840b8cea83f343693.bindPopup(popup_e32bde1bc6599789b6af0ced5ee42367)
+        ;
+
+        
+    
+    
+            marker_d52b87f15a297cb840b8cea83f343693.bindTooltip(
+                `<div>
+                     Route touristique de Bornes 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f515f499469d1a4159451448afb3517f = L.marker(
+                [45.8366, 6.2955],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_1f5fbcf64f099aec81f022a202670744 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_f515f499469d1a4159451448afb3517f.setIcon(div_icon_1f5fbcf64f099aec81f022a202670744);
+        
+    
+        var popup_6f8e1f0ad5a2c69f62ed66c39faf7c02 = L.popup({"maxWidth": 250});
+
+        
+            var html_8ac8d11756f15af16bff25b6fa5537c7 = $(`<div id="html_8ac8d11756f15af16bff25b6fa5537c7" style="width: 100.0%; height: 100.0%;"><b>🍄 Montagne de la Tournette</b><br><ul><li><b>Types:</b> Cèpes, Girolles</li><li><b>Terrain:</b> Ombres le long des sentiers</li><li><b>Astuce:</b> Cherchez les coins humides le long des sentiers après la pluie</li></ul></div>`)[0];
+            popup_6f8e1f0ad5a2c69f62ed66c39faf7c02.setContent(html_8ac8d11756f15af16bff25b6fa5537c7);
+        
+
+        marker_f515f499469d1a4159451448afb3517f.bindPopup(popup_6f8e1f0ad5a2c69f62ed66c39faf7c02)
+        ;
+
+        
+    
+    
+            marker_f515f499469d1a4159451448afb3517f.bindTooltip(
+                `<div>
+                     Montagne de la Tournette 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9701b794dd8b8401132ff19ceaa5aa91 = L.marker(
+                [45.8573, 6.2163],
+                {}
+            ).addTo(map_e37136274f49f648b1ad7e786b1becf7);
+        
+    
+            var div_icon_61c16ff5000fdf3d7c960ef63599b59d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size:24px\u0027\u003e\ud83c\udf44\u003c/div\u003e"});
+            marker_9701b794dd8b8401132ff19ceaa5aa91.setIcon(div_icon_61c16ff5000fdf3d7c960ef63599b59d);
+        
+    
+        var popup_d40c81f9216938427f6c952232ec695e = L.popup({"maxWidth": 250});
+
+        
+            var html_9986ed360b5a487227a98f22744fb86f = $(`<div id="html_9986ed360b5a487227a98f22744fb86f" style="width: 100.0%; height: 100.0%;"><b>🍄 Réserve naturelle du Roc de Chère</b><br><ul><li><b>Types:</b> Trompettes-de-la-mort, Girolles</li><li><b>Terrain:</b> Sols humides proches de l'eau</li><li><b>Astuce:</b> Explorez les bois proches de l’eau pour une meilleure récolte</li></ul></div>`)[0];
+            popup_d40c81f9216938427f6c952232ec695e.setContent(html_9986ed360b5a487227a98f22744fb86f);
+        
+
+        marker_9701b794dd8b8401132ff19ceaa5aa91.bindPopup(popup_d40c81f9216938427f6c952232ec695e)
+        ;
+
+        
+    
+    
+            marker_9701b794dd8b8401132ff19ceaa5aa91.bindTooltip(
+                `<div>
+                     Réserve naturelle du Roc de Chère 🍄
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
